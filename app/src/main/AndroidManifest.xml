@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".mvpactivity.MvpActivity"/>
+        <activity android:name=".activitymvpfragment.ActivityMvpFragment"/>
+        <activity android:name=".mvpactivityfragment.MvpActivityFragment"/>
+        <activity android:name=".mvpactivitymvpfragment.MvpActivityMvpFragment"/>
     </application>
 
 </manifest>
