@@ -1,10 +1,8 @@
-package ru.eyelog.moxymvppatternkt.mvpactivityfragment
+package ru.eyelog.moxymvppatternkt.mvpactivitymvpfragment.fragmenttext
 
 import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface LFView : MvpView{
-
-}
+interface TFView : MvpView

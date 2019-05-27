@@ -1,4 +1,4 @@
-package ru.eyelog.moxymvppatternkt.mvpactivitymvpfragment
+package ru.eyelog.moxymvppatternkt.mvpactivitymvpfragment.fragmenttext
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,26 +11,26 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.arellomobile.mvp.presenter.ProvidePresenterTag
 import ru.eyelog.moxymvppatternkt.R
 
-class Fragment : MvpAppCompatFragment(), FView{
+class TextFragment : MvpAppCompatFragment(), TFView {
 
     @InjectPresenter
-    lateinit var fPresenter: FPresenter
+    lateinit var tfPresenter: TFPresenter
 
-    @ProvidePresenterTag(presenterClass = FPresenter::class, type = PresenterType.GLOBAL)
+    @ProvidePresenterTag(presenterClass = TFPresenter::class, type = PresenterType.GLOBAL)
     fun provideLFPresenterTag(): String = "FP"
 
     @ProvidePresenter(type = PresenterType.GLOBAL)
-    fun provideLFPresenter() = FPresenter()
+    fun provideLFPresenter() = TFPresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        return inflater.inflate(R.layout.fragment, container, false)
+        return inflater.inflate(R.layout.fragment_text, container, false)
 
     }
 
     companion object {
-        fun newInstance(): Fragment {
-            val fragment = Fragment()
+        fun newInstance(): TextFragment {
+            val fragment = TextFragment()
             val args = Bundle()
             fragment.arguments = args
             return fragment

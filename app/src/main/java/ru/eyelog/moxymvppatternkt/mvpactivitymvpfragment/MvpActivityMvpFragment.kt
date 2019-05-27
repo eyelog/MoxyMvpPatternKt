@@ -1,13 +1,15 @@
 package ru.eyelog.moxymvppatternkt.mvpactivitymvpfragment
 
+import android.content.res.Configuration
 import android.os.Bundle
+import android.support.v7.widget.RecyclerView
 import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.arellomobile.mvp.presenter.ProvidePresenterTag
 import ru.eyelog.moxymvppatternkt.R
+import ru.eyelog.moxymvppatternkt.utils.RVAdapter
 
 class MvpActivityMvpFragment : MvpAppCompatActivity(), AView{
 
@@ -22,9 +24,13 @@ class MvpActivityMvpFragment : MvpAppCompatActivity(), AView{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mvp_activity_fragment)
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            setContentView(R.layout.mvp_activity_fragment_portrait)
+        }else{
+            setContentView(R.layout.mvp_activity_fragment_landscape)
+        }
 
-        aPresenter.setFragment(supportFragmentManager)
+        aPresenter.setFragments(supportFragmentManager)
 
     }
 }
